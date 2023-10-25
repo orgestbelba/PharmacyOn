@@ -1,0 +1,29 @@
+﻿@model IEnumerable<PharmacyOn.Models.Product>
+@{
+    ViewData["Title"] = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="bg-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0"><a asp-area="" asp-controller="Home" asp-action="Main">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+         {
+            <div class="col-sm-6 col-lg-4 text-center item mb-4">
+                <a asp-controller="Home" asp-action="ShopSingle" asp-route-id="@item.ID" > <img src="@Url.Content(item.ImagePath)" width="200" height="270" text-align="center" alt="Image"> </a>
+                <h3 class="text-dark"><a href="shop-single.html">@item.Name</a></h3>
+                <p class="price">$@item.Price</p>
+            </div>
+         }
+    </div>     
+    </div>
+</div>
+
