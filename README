@@ -1,3 +1,4 @@
 To be able to run the project you need to:
 - Import the Pharmacy.bacpac to your SSMS.
 - Change the DefaultConnection string at appsettings.json (Changing only the Server name should be enough).
+- To access the Admin Console simply change the URL to /Admin/Main
